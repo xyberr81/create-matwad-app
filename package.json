@@ -1,0 +1,35 @@
+{
+  "name": "create-matwad-app",
+  "version": "1.0.1",
+  "description": "CLI to scaffold a full-stack app with Express, Knex, Vite, React, Tailwind, and Shadcn UI.",
+  "main": "src/index.js",
+  "bin": {
+    "create-matwad-app": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "keywords": [
+    "create-app",
+    "scaffold",
+    "express",
+    "react",
+    "vite",
+    "knex",
+    "shadcn"
+  ],
+  "author": "xyberr",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^13.0.0",
+    "fs-extra": "^11.3.0",
+    "kolorist": "^1.8.0",
+    "prompts": "^2.4.2"
+  }
+}
