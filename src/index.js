@@ -67,6 +67,18 @@ export async function run() {
   console.log(`\n${blue(bold("Setting up Server..."))}`);
   await fse.copy(serverTemplate, serverDir);
 
+  // Rename _gitignore to .gitignore
+  const gitignorePath = path.join(serverDir, "_gitignore");
+  if (fse.existsSync(gitignorePath)) {
+    await fse.move(gitignorePath, path.join(serverDir, ".gitignore"));
+  }
+
+  // Rename _env.local to .env.local
+  const envPath = path.join(serverDir, "_env.local");
+  if (fse.existsSync(envPath)) {
+    await fse.move(envPath, path.join(serverDir, ".env.local"));
+  }
+
   // Update server package.json name
   const serverPkgPath = path.join(serverDir, "package.json");
   const serverPkg = await fse.readJson(serverPkgPath);
