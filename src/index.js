@@ -139,6 +139,24 @@ export async function run() {
     stdio: "inherit",
   });
 
+  // 4. Initialize Git
+  console.log(`\n${blue(bold("Initializing Git..."))}`);
+  try {
+    await runCommand("git", ["init"], { cwd: root });
+    await runCommand("git", ["add", "."], { cwd: root });
+    await runCommand(
+      "git",
+      ["commit", "-m", '"Initial commit via create-matwad-app"'],
+      { cwd: root }
+    );
+    console.log(green("Git initialized and initial commit created."));
+  } catch (error) {
+    console.warn(
+      red("Failed to initialize git or create initial commit:"),
+      error.message
+    );
+  }
+
   console.log(`\n${green("Success!")} Created ${bold(projectName)} at ${root}`);
   console.log("\nNext steps:");
   console.log(`  cd ${projectName}`);
