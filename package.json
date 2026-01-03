@@ -1,6 +1,6 @@
 {
   "name": "create-matwad-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI to scaffold a full-stack app with Express, Knex, Vite, React, Tailwind, and Shadcn UI.",
   "main": "src/index.js",
   "bin": {
